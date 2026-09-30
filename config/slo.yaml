@@ -7,7 +7,8 @@ primary_slo:
     total_event: 'event == "request_received"'
   target_percent: 99.5
   error_budget_percent: 0.5
-  note: Học viên phải giải thích hoặc điều chỉnh ngưỡng bằng baseline của mình. Ví dụ nếu có 10,000 request trong cửa sổ 28 ngày, error budget 0.5% nghĩa là tối đa 50 request được phép không đạt SLO.
+  note: Baseline hệ thống ghi nhận P95 latency ~158ms và TTFT P95 ~54ms. Ngưỡng SLO latency <= 3000ms được chọn để bảo đảm phát hiện kịp thời các sự cố tắc nghẽn (như RAG delay ~2500ms). Với 10,000 request trong cửa sổ 28 ngày, mục tiêu SLO 99.5% tương ứng Error Budget 0.5%, cho phép tối đa 50 request bị chậm hoặc lỗi.
+
 guardrails:
   error_rate_pct_max: 2
   daily_cost_usd_max: 2.5
